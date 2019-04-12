@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE103B7A2260AD93009FD7D9 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE103B792260AD93009FD7D9 /* ChecklistItem.swift */; };
+		CE18523C2260E2AD00AB732D /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18523B2260E2AD00AB732D /* AddItemViewController.swift */; };
 		CE7955D62251DB4400828334 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7955D52251DB4400828334 /* AppDelegate.swift */; };
 		CE7955D82251DB4400828334 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7955D72251DB4400828334 /* ChecklistViewController.swift */; };
 		CE7955DB2251DB4400828334 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7955D92251DB4400828334 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		CE103B792260AD93009FD7D9 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChecklistItem.swift; path = woohyuk_checklist/ChecklistItem.swift; sourceTree = "<group>"; };
+		CE18523B2260E2AD00AB732D /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		CE7955D22251DB4400828334 /* woohyuk_checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = woohyuk_checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7955D52251DB4400828334 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7955D72251DB4400828334 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		CE7955C92251DB4400828334 = {
 			isa = PBXGroup;
 			children = (
+				CE18523B2260E2AD00AB732D /* AddItemViewController.swift */,
 				CE103B792260AD93009FD7D9 /* ChecklistItem.swift */,
 				CE7955E72251DBD000828334 /* .gitignore */,
 				CE7955D42251DB4400828334 /* woohyuk_checklist */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7955D82251DB4400828334 /* ChecklistViewController.swift in Sources */,
+				CE18523C2260E2AD00AB732D /* AddItemViewController.swift in Sources */,
 				CE103B7A2260AD93009FD7D9 /* ChecklistItem.swift in Sources */,
 				CE7955D62251DB4400828334 /* AppDelegate.swift in Sources */,
 			);
