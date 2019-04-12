@@ -3,25 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE103B7A2260AD93009FD7D9 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE103B792260AD93009FD7D9 /* ChecklistItem.swift */; };
 		CE7955D62251DB4400828334 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7955D52251DB4400828334 /* AppDelegate.swift */; };
-		CE7955D82251DB4400828334 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7955D72251DB4400828334 /* ViewController.swift */; };
+		CE7955D82251DB4400828334 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7955D72251DB4400828334 /* ChecklistViewController.swift */; };
 		CE7955DB2251DB4400828334 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7955D92251DB4400828334 /* Main.storyboard */; };
 		CE7955DD2251DB4500828334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7955DC2251DB4500828334 /* Assets.xcassets */; };
 		CE7955E02251DB4600828334 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7955DE2251DB4600828334 /* LaunchScreen.storyboard */; };
+		CE7955E82251DBD000828334 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE7955E72251DBD000828334 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE103B792260AD93009FD7D9 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChecklistItem.swift; path = woohyuk_checklist/ChecklistItem.swift; sourceTree = "<group>"; };
 		CE7955D22251DB4400828334 /* woohyuk_checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = woohyuk_checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7955D52251DB4400828334 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE7955D72251DB4400828334 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE7955D72251DB4400828334 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		CE7955DA2251DB4400828334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE7955DC2251DB4500828334 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7955DF2251DB4600828334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7955E12251DB4600828334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7955E72251DBD000828334 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,8 @@
 		CE7955C92251DB4400828334 = {
 			isa = PBXGroup;
 			children = (
+				CE103B792260AD93009FD7D9 /* ChecklistItem.swift */,
+				CE7955E72251DBD000828334 /* .gitignore */,
 				CE7955D42251DB4400828334 /* woohyuk_checklist */,
 				CE7955D32251DB4400828334 /* Products */,
 			);
@@ -55,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7955D52251DB4400828334 /* AppDelegate.swift */,
-				CE7955D72251DB4400828334 /* ViewController.swift */,
+				CE7955D72251DB4400828334 /* ChecklistViewController.swift */,
 				CE7955D92251DB4400828334 /* Main.storyboard */,
 				CE7955DC2251DB4500828334 /* Assets.xcassets */,
 				CE7955DE2251DB4600828334 /* LaunchScreen.storyboard */,
@@ -100,7 +106,7 @@
 				};
 			};
 			buildConfigurationList = CE7955CD2251DB4400828334 /* Build configuration list for PBXProject "woohyuk_checklist" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -122,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7955E82251DBD000828334 /* .gitignore in Resources */,
 				CE7955E02251DB4600828334 /* LaunchScreen.storyboard in Resources */,
 				CE7955DD2251DB4500828334 /* Assets.xcassets in Resources */,
 				CE7955DB2251DB4400828334 /* Main.storyboard in Resources */,
@@ -135,7 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7955D82251DB4400828334 /* ViewController.swift in Sources */,
+				CE7955D82251DB4400828334 /* ChecklistViewController.swift in Sources */,
+				CE103B7A2260AD93009FD7D9 /* ChecklistItem.swift in Sources */,
 				CE7955D62251DB4400828334 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
 				INFOPLIST_FILE = woohyuk_checklist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
 				INFOPLIST_FILE = woohyuk_checklist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
