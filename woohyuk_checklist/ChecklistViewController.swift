@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate{
     var items: [ChecklistItem]
     
     required init?(coder aDecoder: NSCoder){
@@ -107,7 +107,7 @@ class ChecklistViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
-    @IBAction func addItem(){
+    /*@IBAction func addItem(){
         let newRowIndex = items.count
         
         let item = ChecklistItem()
@@ -118,7 +118,19 @@ class ChecklistViewController: UITableViewController {
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
+    }*/
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
+        let newRowIndex = items.count
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths,with: .automatic)
+        
+        navigationController?.popViewController(animated: true)
     }
+    
     /*delete Row*/
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
         items.remove(at: indexPath.row)
@@ -126,6 +138,17 @@ class ChecklistViewController: UITableViewController {
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
+    
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController){
+        navigationController?.popViewController(animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "AddItem"{
+            let controller = segue.destination as! AddItemViewController
+            controller.delegate = self
+        }
+    }
+    
 }
 
 
