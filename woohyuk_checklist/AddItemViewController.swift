@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AddItemViewController: UITableViewController {
+class AddItemViewController: UITableViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,23 +21,51 @@ class AddItemViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    /*Clear Button */
+    func textFieldShouldClear(_ textField: UITextField)->Bool{
+        doneBarButton.isEnabled = false
+        return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
+    }
     // MARK: - Table view data source
-    @IBAction func cancel(){
+    @IBAction func cancel(/*_ sender: UIBarButtonItem*/){
+        print("Contents of the text field: \(textField.text!)")
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func done(){
+    @IBAction func done(/*_ sender: UIBarButtonItem*/){
+        print("Contents of the text field: \(textField.text!)")
         navigationController?.popViewController(animated: true)
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        let oldText = textField.text!
+        let stringRange = Range(range, in:oldText)!
+        let newText = oldText.replacingCharacters(in: stringRange,with:string)
+        
+        doneBarButton.isEnabled = !newText.isEmpty
+        return true
+    }
+    
+    
+    
+    override func tableView(_ tableView: UITableView,
+                             willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+         return nil }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
     /*

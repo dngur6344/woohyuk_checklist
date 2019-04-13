@@ -44,7 +44,6 @@
 		CE7955C92251DB4400828334 = {
 			isa = PBXGroup;
 			children = (
-				CE18523B2260E2AD00AB732D /* AddItemViewController.swift */,
 				CE103B792260AD93009FD7D9 /* ChecklistItem.swift */,
 				CE7955E72251DBD000828334 /* .gitignore */,
 				CE7955D42251DB4400828334 /* woohyuk_checklist */,
@@ -63,6 +62,7 @@
 		CE7955D42251DB4400828334 /* woohyuk_checklist */ = {
 			isa = PBXGroup;
 			children = (
+				CE18523B2260E2AD00AB732D /* AddItemViewController.swift */,
 				CE7955D52251DB4400828334 /* AppDelegate.swift */,
 				CE7955D72251DB4400828334 /* ChecklistViewController.swift */,
 				CE7955D92251DB4400828334 /* Main.storyboard */,
