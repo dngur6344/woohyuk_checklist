@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Checklists-->
+        <!--(Name of the Checklist)-->
         <scene sceneID="OuX-TW-eAq">
             <objects>
                 <tableViewController id="Z3e-rZ-ksz" customClass="ChecklistViewController" customModule="woohyuk_checklist" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                             <outlet property="delegate" destination="Z3e-rZ-ksz" id="FF7-nc-KBw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="ccc-gT-nXG" userLabel="Checklists">
+                    <navigationItem key="navigationItem" title="(Name of the Checklist)" id="ccc-gT-nXG" userLabel="Checklists">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kTs-JA-Lqf">
                             <connections>
                                 <segue destination="qnk-iF-jkr" kind="show" identifier="AddItem" id="3Qw-N3-yvT"/>
@@ -68,10 +68,32 @@
             </objects>
             <point key="canvasLocation" x="1029.375" y="28.52112676056338"/>
         </scene>
+        <!--All Lists-->
+        <scene sceneID="7dh-1B-fJZ">
+            <objects>
+                <tableViewController id="kPo-IG-YTw" userLabel="All Lists" customClass="AllListsViewController" customModule="woohyuk_checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d3T-o1-Mt1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="kPo-IG-YTw" id="E2Y-BD-P2w"/>
+                            <outlet property="delegate" destination="kPo-IG-YTw" id="dpa-cm-gDP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Checklists" id="hMD-JI-EMe"/>
+                    <connections>
+                        <segue destination="Z3e-rZ-ksz" kind="show" identifier="ShowChecklist" id="8z8-pT-SWu"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTB-00-wjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="-777"/>
+        </scene>
         <!--Add item-->
         <scene sceneID="ZbX-FI-bGz">
             <objects>
-                <tableViewController id="qnk-iF-jkr" customClass="AddItemViewController" customModule="woohyuk_checklist" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qnk-iF-jkr" customClass="ItemDetailViewController" customModule="woohyuk_checklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kHv-a4-GXo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -144,7 +166,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Z3e-rZ-ksz" kind="relationship" relationship="rootViewController" id="57h-ya-pYP"/>
+                        <segue destination="kPo-IG-YTw" kind="relationship" relationship="rootViewController" id="8U1-gd-AaD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbx-BO-toY" userLabel="First Responder" sceneMemberID="firstResponder"/>

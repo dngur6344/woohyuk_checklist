@@ -1,85 +1,40 @@
 //
-//  ItemDetailViewController.swift
+//  AllListsViewController.swift
 //  woohyuk_checklist
 //
-//  Created by user on 13/04/2019.
+//  Created by user on 14/04/2019.
 //  Copyright © 2019 woohyuk. All rights reserved.
 //
 
 import UIKit
 
-protocol ItemDetailViewControllerDelegate: class {
-    func ItemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
-    func ItemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
-    func ItemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
-}
-
-class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
-    var itemToEdit: ChecklistItem?
-    weak var delegate: ItemDetailViewControllerDelegate?
-    @IBOutlet weak var doneBarButton: UIBarButtonItem!
-    @IBOutlet weak var textField: UITextField!
+class AllListsViewController: UITableViewController {
+/*Cell id*/
+    let cellIdentifier = "ChecklistCell"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let itemToEdit = itemToEdit{
-            title = "Edit Item"
-            textField.text = itemToEdit.text
-            doneBarButton.isEnabled = true
-        }
-        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    /*Clear Button */
-    func textFieldShouldClear(_ textField: UITextField)->Bool{
-        doneBarButton.isEnabled = false
-        return true
-    }
-    
-    override func viewWillAppear(_ animated: Bool){
-        super.viewWillAppear(animated)
-        textField.becomeFirstResponder()
-    }
-    // MARK: - Table view data source
-    @IBAction func cancel(/*_ sender: UIBarButtonItem*/){
-        delegate?.ItemDetailViewControllerDidCancel(self)
-    }
-    
-    @IBAction func done(/*_ sender: UIBarButtonItem*/){
-        print("Contents of the text field: \(textField.text!)")
-        if let itemToEdit = itemToEdit{
-            itemToEdit.text = textField.text!
-            delegate?.ItemDetailViewController(self, didFinishEditing: itemToEdit)
-        }
-        else{
-            let item = ChecklistItem()
-            item.text = textField.text!
-            
-            delegate?.ItemDetailViewController(self, didFinishEditing:item)
-        }
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
-        let oldText = textField.text!
-        let stringRange = Range(range, in:oldText)!
-        let newText = oldText.replacingCharacters(in: stringRange,with:string)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        doneBarButton.isEnabled = !newText.isEmpty
-        return true
+        cell.textLabel!.text="List\(indexPath.row)"
+        return cell
+    }
+    override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath){
+        performSegue(withIdentifier: "ShowChecklist",sender: nil)
     }
     
-    
-    
-    
-    override func tableView(_ tableView: UITableView,
-                             willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-         return nil }
-    
+
+    // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -87,7 +42,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 3
     }
 
     /*
