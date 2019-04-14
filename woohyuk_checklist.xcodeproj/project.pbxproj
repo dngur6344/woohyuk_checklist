@@ -16,6 +16,8 @@
 		CE7955E02251DB4600828334 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7955DE2251DB4600828334 /* LaunchScreen.storyboard */; };
 		CE7955E82251DBD000828334 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE7955E72251DBD000828334 /* .gitignore */; };
 		CED767CB22637C54008647EC /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED767CA22637C54008647EC /* AllListsViewController.swift */; };
+		CED767CD22638086008647EC /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED767CC22638086008647EC /* Checklist.swift */; };
+		CED767D32263878B008647EC /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED767D22263878B008647EC /* ListDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CE7955E12251DB4600828334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7955E72251DBD000828334 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CED767CA22637C54008647EC /* AllListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
+		CED767CC22638086008647EC /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		CED767D22263878B008647EC /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				CE7955DE2251DB4600828334 /* LaunchScreen.storyboard */,
 				CE7955E12251DB4600828334 /* Info.plist */,
 				CED767CA22637C54008647EC /* AllListsViewController.swift */,
+				CED767CC22638086008647EC /* Checklist.swift */,
+				CED767D22263878B008647EC /* ListDetailViewController.swift */,
 			);
 			path = woohyuk_checklist;
 			sourceTree = "<group>";
@@ -149,7 +155,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7955D82251DB4400828334 /* ChecklistViewController.swift in Sources */,
+				CED767D32263878B008647EC /* ListDetailViewController.swift in Sources */,
 				CE18523C2260E2AD00AB732D /* AddItemViewController.swift in Sources */,
+				CED767CD22638086008647EC /* Checklist.swift in Sources */,
 				CE103B7A2260AD93009FD7D9 /* ChecklistItem.swift in Sources */,
 				CED767CB22637C54008647EC /* AllListsViewController.swift in Sources */,
 				CE7955D62251DB4400828334 /* AppDelegate.swift in Sources */,

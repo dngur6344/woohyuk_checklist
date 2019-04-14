@@ -9,8 +9,9 @@
 import UIKit
 
 class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate{
-    var items: [ChecklistItem]
-    
+    var items = [ChecklistItem]()
+    var checklist: Checklist! /*From AllListViewController*/
+   
     required init?(coder aDecoder: NSCoder){
         items = [ChecklistItem]()
         
@@ -46,6 +47,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = checklist.name /* Got the information From Allist controller*/
+        loadChecklistItems()
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int) -> Int{
