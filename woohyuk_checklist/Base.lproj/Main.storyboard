@@ -18,16 +18,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="ckF-ON-NaG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="ckF-ON-NaG">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ckF-ON-NaG" id="Y7V-QA-xhP">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="252" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IR7-tE-gBe">
-                                            <rect key="frame" x="36" y="11" width="216" height="22"/>
+                                            <rect key="frame" x="36" y="11" width="188" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Peu-4P-J83">
+                                            <rect key="frame" x="7" y="7" width="13" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -39,6 +46,9 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="IR7-tE-gBe" secondAttribute="trailing" constant="20" id="mxp-mz-qsn"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qnk-iF-jkr" kind="show" identifier="EditItem" id="cxJ-4Z-5aY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -142,4 +152,7 @@
             <point key="canvasLocation" x="31.875" y="28.52112676056338"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cxJ-4Z-5aY"/>
+    </inferredMetricsTieBreakers>
 </document>

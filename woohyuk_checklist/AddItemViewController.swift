@@ -11,16 +11,23 @@ import UIKit
 protocol AddItemViewControllerDelegate: class {
     func addItemViewControllerDidCancel(_ controller: AddItemViewController)
     func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem)
+    func addItemViewController(_ controller: AddItemViewController, didFinishEditing item: ChecklistItem)
 }
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
-
+    var itemToEdit: ChecklistItem?
     weak var delegate: AddItemViewControllerDelegate?
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let itemToEdit = itemToEdit{
+            title = "Edit Item"
+            textField.text = itemToEdit.text
+            doneBarButton.isEnabled = true
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,11 +51,17 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func done(/*_ sender: UIBarButtonItem*/){
-        let item = ChecklistItem()
-        item.text = textField.text!
-        item.checked = false
-        
-        delegate?.addItemViewController(self, didFinishAdding: item)
+        print("Contents of the text field: \(textField.text!)")
+        if let itemToEdit = itemToEdit{
+            itemToEdit.text = textField.text!
+            delegate?.addItemViewController(self, didFinishEditing: itemToEdit)
+        }
+        else{
+            let item = ChecklistItem()
+            item.text = textField.text!
+            
+            delegate?.addItemViewController(self, didFinishEditing:item)
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
