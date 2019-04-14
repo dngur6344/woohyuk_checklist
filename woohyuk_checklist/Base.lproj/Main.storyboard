@@ -95,7 +95,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTB-00-wjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="-777"/>
+            <point key="canvasLocation" x="38" y="29"/>
         </scene>
         <!--Add Checklist-->
         <scene sceneID="fPS-W7-j6G">
@@ -160,7 +160,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfu-vd-XLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571.875" y="717.25352112676057"/>
+            <point key="canvasLocation" x="38" y="1167"/>
         </scene>
         <!--Add item-->
         <scene sceneID="ZbX-FI-bGz">
@@ -243,11 +243,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbx-BO-toY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.875" y="28.52112676056338"/>
+            <point key="canvasLocation" x="-1001" y="29"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cxJ-4Z-5aY"/>
-        <segue reference="z1l-pp-A4x"/>
+        <segue reference="hNS-1H-AkH"/>
     </inferredMetricsTieBreakers>
 </document>
